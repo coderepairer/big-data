@@ -1,0 +1,1300 @@
+{
+  "type": "record",
+  "name": "pm_huawei_4g",
+  "fields": [
+    {
+      "name": "enodeB",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "Year",
+      "type": "int"
+    },
+    {
+      "name": "Month",
+      "type": "int"
+    },
+    {
+      "name": "day",
+      "type": "int"
+    },
+    {
+      "name": "time",
+      "type": "int"
+    },
+    {
+      "name": "cell",
+      "type": "string"
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_8_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_cqi_dl_1",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_cqi_dl_4",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_ul_plmn_qci_5",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_28",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_sch_16qam_errtb_rbler",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_user_dldata_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pusch_mcs_0",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_0",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_bch_tb_bits",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_paging_s1_rx",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_ul_sch_qpsk_tb_retrans_bits",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_erab_normrel_hoout_plmn",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_4",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pusch_mcs_31",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_pch_tb_bits",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_3",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pusch_mcs_29",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_cqi_dl_0",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pusch_mcs_21",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_rrc_connreq_succ_mosig",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_cqi_dl_8",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_cqi_dl_2",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_ra_grpb_resp",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_cqi_dl_12",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_plmn",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_8_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_prb_pucch_avg",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_dl",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_user_uldata_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_cqi_dl_15",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_25",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_cqi_dl_7",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_rrc_reest_att",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_dl_plmn_qci_5",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pusch_mcs_24",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_plmn_qci_5",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_cqi_dl_6",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_dl_plmn",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_ul_sch_64qam_errtb_rbler",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_erab_normrel_hoout_plmn_qci_1",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_cqi_dl_11",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_time_qci_8",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_plmn_qci_8",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_erab_normrel_hoout_plmn_qci_5",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_cqi_dl_10",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_ul",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_1",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_ul_qci_1",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_2",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_ul_qci_2",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_3",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_ul_qci_3",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_4",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_ul_qci_4",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_5",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_ul_qci_5",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_6",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_ul_qci_6",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_7",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_ul_qci_7",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_8",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_ul_qci_8",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_9",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_ul_qci_9",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_1",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_dl_qci_1",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_2",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_dl_qci_2",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_3",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_dl_qci_3",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_4",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_dl_qci_4",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_5",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_dl_qci_5",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_6",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_dl_qci_6",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_7",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_dl_qci_7",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_8",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_dl_qci_8",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_9",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_dl_qci_9",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_1_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_2_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_3_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_4_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_6_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_7_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_9_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_1_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_2_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_3_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_4_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_5_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_6_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_7_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_9_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_prb_dl_used_avg",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_prb_ul_used_avg",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_user_avg",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_user_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_pdcp_tx_disc_trf_sdu_qci_8",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_dlpwr_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_dlpwr_avg",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_mimo_prb_cl_rank1",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_mimo_prb_cl_rank2",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_mimo_prb_ol_rank1",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_mimo_prb_ol_rank2",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_mimo_prb_cl_rank3",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_mimo_prb_cl_rank4",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_mimo_prb_ol_rank3",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_mimo_prb_ol_rank4",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_rrc_setupfail_resfail",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_rrc_setupfail_noreply",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_rrc_setupfail_rej",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_rrc_reest_succ",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_rrc_reest_reconffail_att",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_rrc_connreq_att",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_1",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_2",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_5",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_6",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_7",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_8",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_9",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_10",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_11",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_12",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_13",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_14",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_15",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_16",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_17",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_18",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_19",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_20",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_21",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_22",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_23",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_24",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_26",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_27",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_29",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_30",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_31",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_cell_unavail_dur_sys",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_cell_unavail_dur_manual",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_paging_uu_att",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_sch_64qam_tb_retrans_bits",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_plmn",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_plmn_qci_8",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_sch_64qam_tb_bits",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_cqi_dl_5",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_dl_plmn_qci_8",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_ul_plmn",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_cqi_dl_3",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_erab_attest_hoin_plmn",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_5_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_erab_succest_hoin_plmn",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_time_qci_1",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_num_qci_1",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_time_qci_2",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_num_qci_2",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_time_qci_3",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_num_qci_3",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_time_qci_4",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_num_qci_4",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_time_qci_5",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_num_qci_5",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_time_qci_6",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_num_qci_6",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_time_qci_7",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_num_qci_7",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_num_qci_8",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_time_qci_9",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_num_qci_9",
+      "type": [
+        "null",
+        "double"
+      ]
+    }
+  ]
+}

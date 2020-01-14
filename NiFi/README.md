@@ -8,14 +8,14 @@ For e.g. As soon as Input file named as out_20190323.csv is copied in SFTP serve
 ![NiFi Pipeline](https://github.com/coderepairer/bigdata/blob/master/NiFi/images/nifi.png?raw=true)
 
 ### Components in above pipeline:
-**1.	Get SFTP :** This component fetches the data from MBNL SFTP server(195.171.11.20) from location /ftp/xxxx/prod/pm_huawei_4g
-It polls out*.csv files every 30 seconds. As soon as it ingests the file, files get deleted from SFTP server. Now the file becomes flow file in above Nif-pipeline and transfers to next component.
+**1.	Get SFTP :** This component fetches the data from source SFTP server(195.xxx.xx.xx) from location /ftp/xxxx/prod/pm_huawei_4g
+It polls out*.csv files every 30 seconds. As soon as it ingests the file, files get deleted from SFTP server. Now the file becomes flow file in above Nifi-pipeline and transfers to next component.
 **2.	ReplaceText:** This component replaces the counter_ids in header of input file with counter_names as per a counter mapping sheet.
 **3.	SplitText:** This component splits the incoming file into batches of 2000 records before loading it into Cassandra. 
 **4.	PutCassandraRecord:** This component reads the incoming file using CSVReader. CSVReader reads the incoming file according to predefined avro/json schema. Same avro/json schema is also used to map the plain text csv data to  cassandra db column datatypes at the time of loading data into table.
 Component Properties:
 ![Component Properties](https://github.com/coderepairer/bigdata/blob/master/NiFi/images/dbproperties.png?raw=true)
-**5.	Put SFTP :** This component copies the files in failed scenarios back to SFTP server(195.171.11.20) at location /ftp/xxxx/prod/pm_huawei_4g_failed
+**5.	Put SFTP :** This component copies the files in failed scenarios back to SFTP server(195.xxx.xx.xx) at location /ftp/xxxx/prod/pm_huawei_4g_failed
 
 ### Variables used :
 ![Component Properties](https://github.com/coderepairer/bigdata/blob/master/NiFi/images/dbproperties.png?raw=true)

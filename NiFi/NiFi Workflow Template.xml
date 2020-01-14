@@ -1,0 +1,2582 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template encoding-version="1.2">
+    <description></description>
+    <groupId>c2fa1d4e-0169-1000-8342-fc47816bf33b</groupId>
+    <name>Insite-MBNL</name>
+    <snippet>
+        <processGroups>
+            <id>04a1c597-8d78-30da-0000-000000000000</id>
+            <parentGroupId>1d51207b-9f73-3624-0000-000000000000</parentGroupId>
+            <position>
+                <x>0.0</x>
+                <y>0.0</y>
+            </position>
+            <comments>Process group for Insite project to load data from SFTP server to Cassandra Tables</comments>
+            <contents>
+                <processGroups>
+                    <id>ff3886bc-5c93-3b51-0000-000000000000</id>
+                    <parentGroupId>04a1c597-8d78-30da-0000-000000000000</parentGroupId>
+                    <position>
+                        <x>-336.3300876171774</x>
+                        <y>-93.5663240227529</y>
+                    </position>
+                    <comments></comments>
+                    <contents>
+                        <connections>
+                            <id>267e23f3-5474-3d72-0000-000000000000</id>
+                            <parentGroupId>ff3886bc-5c93-3b51-0000-000000000000</parentGroupId>
+                            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+                            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+                            <destination>
+<groupId>ff3886bc-5c93-3b51-0000-000000000000</groupId>
+<id>48ab3e06-017f-34c8-0000-000000000000</id>
+<type>PROCESSOR</type>
+                            </destination>
+                            <flowFileExpiration>0 sec</flowFileExpiration>
+                            <labelIndex>1</labelIndex>
+                            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+                            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+                            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+                            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+                            <name></name>
+                            <selectedRelationships>success</selectedRelationships>
+                            <source>
+<groupId>ff3886bc-5c93-3b51-0000-000000000000</groupId>
+<id>7ff0afe2-c2b6-34c8-0000-000000000000</id>
+<type>PROCESSOR</type>
+                            </source>
+                            <zIndex>0</zIndex>
+                        </connections>
+                        <connections>
+                            <id>2d8601e7-b953-3ed9-0000-000000000000</id>
+                            <parentGroupId>ff3886bc-5c93-3b51-0000-000000000000</parentGroupId>
+                            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+                            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+                            <destination>
+<groupId>ff3886bc-5c93-3b51-0000-000000000000</groupId>
+<id>14f50882-cf95-3e03-0000-000000000000</id>
+<type>PROCESSOR</type>
+                            </destination>
+                            <flowFileExpiration>0 sec</flowFileExpiration>
+                            <labelIndex>1</labelIndex>
+                            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+                            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+                            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+                            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+                            <name></name>
+                            <selectedRelationships>failure</selectedRelationships>
+                            <source>
+<groupId>ff3886bc-5c93-3b51-0000-000000000000</groupId>
+<id>93d0d21f-a5d2-3f8c-0000-000000000000</id>
+<type>PROCESSOR</type>
+                            </source>
+                            <zIndex>0</zIndex>
+                        </connections>
+                        <connections>
+                            <id>a6207329-d6e2-301d-0000-000000000000</id>
+                            <parentGroupId>ff3886bc-5c93-3b51-0000-000000000000</parentGroupId>
+                            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+                            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+                            <destination>
+<groupId>ff3886bc-5c93-3b51-0000-000000000000</groupId>
+<id>93d0d21f-a5d2-3f8c-0000-000000000000</id>
+<type>PROCESSOR</type>
+                            </destination>
+                            <flowFileExpiration>0 sec</flowFileExpiration>
+                            <labelIndex>1</labelIndex>
+                            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+                            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+                            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+                            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+                            <name>Split File into batches</name>
+                            <prioritizers>org.apache.nifi.prioritizer.FirstInFirstOutPrioritizer</prioritizers>
+                            <selectedRelationships>failure</selectedRelationships>
+                            <selectedRelationships>splits</selectedRelationships>
+                            <source>
+<groupId>ff3886bc-5c93-3b51-0000-000000000000</groupId>
+<id>48ab3e06-017f-34c8-0000-000000000000</id>
+<type>PROCESSOR</type>
+                            </source>
+                            <zIndex>0</zIndex>
+                        </connections>
+                        <controllerServices>
+                            <id>5bc7489f-0451-36ae-0000-000000000000</id>
+                            <parentGroupId>ff3886bc-5c93-3b51-0000-000000000000</parentGroupId>
+                            <bundle>
+<artifact>nifi-record-serialization-services-nar</artifact>
+<group>org.apache.nifi</group>
+<version>1.8.0</version>
+                            </bundle>
+                            <comments></comments>
+                            <descriptors>
+<entry>
+    <key>schema-access-strategy</key>
+    <value>
+        <name>schema-access-strategy</name>
+    </value>
+</entry>
+<entry>
+    <key>schema-registry</key>
+    <value>
+        <identifiesControllerService>org.apache.nifi.schemaregistry.services.SchemaRegistry</identifiesControllerService>
+        <name>schema-registry</name>
+    </value>
+</entry>
+<entry>
+    <key>schema-name</key>
+    <value>
+        <name>schema-name</name>
+    </value>
+</entry>
+<entry>
+    <key>schema-version</key>
+    <value>
+        <name>schema-version</name>
+    </value>
+</entry>
+<entry>
+    <key>schema-branch</key>
+    <value>
+        <name>schema-branch</name>
+    </value>
+</entry>
+<entry>
+    <key>schema-text</key>
+    <value>
+        <name>schema-text</name>
+    </value>
+</entry>
+<entry>
+    <key>csv-reader-csv-parser</key>
+    <value>
+        <name>csv-reader-csv-parser</name>
+    </value>
+</entry>
+<entry>
+    <key>Date Format</key>
+    <value>
+        <name>Date Format</name>
+    </value>
+</entry>
+<entry>
+    <key>Time Format</key>
+    <value>
+        <name>Time Format</name>
+    </value>
+</entry>
+<entry>
+    <key>Timestamp Format</key>
+    <value>
+        <name>Timestamp Format</name>
+    </value>
+</entry>
+<entry>
+    <key>CSV Format</key>
+    <value>
+        <name>CSV Format</name>
+    </value>
+</entry>
+<entry>
+    <key>Value Separator</key>
+    <value>
+        <name>Value Separator</name>
+    </value>
+</entry>
+<entry>
+    <key>Skip Header Line</key>
+    <value>
+        <name>Skip Header Line</name>
+    </value>
+</entry>
+<entry>
+    <key>ignore-csv-header</key>
+    <value>
+        <name>ignore-csv-header</name>
+    </value>
+</entry>
+<entry>
+    <key>Quote Character</key>
+    <value>
+        <name>Quote Character</name>
+    </value>
+</entry>
+<entry>
+    <key>Escape Character</key>
+    <value>
+        <name>Escape Character</name>
+    </value>
+</entry>
+<entry>
+    <key>Comment Marker</key>
+    <value>
+        <name>Comment Marker</name>
+    </value>
+</entry>
+<entry>
+    <key>Null String</key>
+    <value>
+        <name>Null String</name>
+    </value>
+</entry>
+<entry>
+    <key>Trim Fields</key>
+    <value>
+        <name>Trim Fields</name>
+    </value>
+</entry>
+<entry>
+    <key>csvutils-character-set</key>
+    <value>
+        <name>csvutils-character-set</name>
+    </value>
+</entry>
+                            </descriptors>
+                            <name>CSVReader</name>
+                            <persistsState>false</persistsState>
+                            <properties>
+<entry>
+    <key>schema-access-strategy</key>
+    <value>schema-name</value>
+</entry>
+<entry>
+    <key>schema-registry</key>
+    <value>e2efa1bf-9ba4-3629-0000-000000000000</value>
+</entry>
+<entry>
+    <key>schema-name</key>
+    <value>pm_huawei_4g</value>
+</entry>
+<entry>
+    <key>schema-version</key>
+</entry>
+<entry>
+    <key>schema-branch</key>
+</entry>
+<entry>
+    <key>schema-text</key>
+    <value>${avro.schema}</value>
+</entry>
+<entry>
+    <key>csv-reader-csv-parser</key>
+    <value>commons-csv</value>
+</entry>
+<entry>
+    <key>Date Format</key>
+</entry>
+<entry>
+    <key>Time Format</key>
+</entry>
+<entry>
+    <key>Timestamp Format</key>
+</entry>
+<entry>
+    <key>CSV Format</key>
+    <value>custom</value>
+</entry>
+<entry>
+    <key>Value Separator</key>
+    <value>,</value>
+</entry>
+<entry>
+    <key>Skip Header Line</key>
+    <value>true</value>
+</entry>
+<entry>
+    <key>ignore-csv-header</key>
+    <value>false</value>
+</entry>
+<entry>
+    <key>Quote Character</key>
+    <value>"</value>
+</entry>
+<entry>
+    <key>Escape Character</key>
+    <value>\</value>
+</entry>
+<entry>
+    <key>Comment Marker</key>
+</entry>
+<entry>
+    <key>Null String</key>
+</entry>
+<entry>
+    <key>Trim Fields</key>
+    <value>true</value>
+</entry>
+<entry>
+    <key>csvutils-character-set</key>
+    <value>UTF-8</value>
+</entry>
+                            </properties>
+                            <state>ENABLED</state>
+                            <type>org.apache.nifi.csv.CSVReader</type>
+                        </controllerServices>
+                        <controllerServices>
+                            <id>e2efa1bf-9ba4-3629-0000-000000000000</id>
+                            <parentGroupId>ff3886bc-5c93-3b51-0000-000000000000</parentGroupId>
+                            <bundle>
+<artifact>nifi-registry-nar</artifact>
+<group>org.apache.nifi</group>
+<version>1.8.0</version>
+                            </bundle>
+                            <comments></comments>
+                            <descriptors>
+<entry>
+    <key>avro-reg-validated-field-names</key>
+    <value>
+        <name>avro-reg-validated-field-names</name>
+    </value>
+</entry>
+<entry>
+    <key>pm_huawei_4g</key>
+    <value>
+        <name>pm_huawei_4g</name>
+    </value>
+</entry>
+                            </descriptors>
+                            <name>AvroSchemaRegistry</name>
+                            <persistsState>false</persistsState>
+                            <properties>
+<entry>
+    <key>avro-reg-validated-field-names</key>
+    <value>true</value>
+</entry>
+<entry>
+    <key>pm_huawei_4g</key>
+    <value>{
+  "type": "record",
+  "name": "pm_huawei_4g",
+  "fields": [
+    {
+      "name": "enodeB",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "Year",
+      "type": "int"
+    },
+    {
+      "name": "Month",
+      "type": "int"
+    },
+    {
+      "name": "day",
+      "type": "int"
+    },
+    {
+      "name": "time",
+      "type": "int"
+    },
+    {
+      "name": "cell",
+      "type": "string"
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_8_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_cqi_dl_1",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_cqi_dl_4",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_ul_plmn_qci_5",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_28",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_sch_16qam_errtb_rbler",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_user_dldata_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pusch_mcs_0",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_0",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_bch_tb_bits",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_paging_s1_rx",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_ul_sch_qpsk_tb_retrans_bits",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_erab_normrel_hoout_plmn",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_4",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pusch_mcs_31",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_pch_tb_bits",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_3",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pusch_mcs_29",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_cqi_dl_0",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pusch_mcs_21",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_rrc_connreq_succ_mosig",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_cqi_dl_8",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_cqi_dl_2",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_ra_grpb_resp",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_cqi_dl_12",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_plmn",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_8_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_prb_pucch_avg",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_dl",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_user_uldata_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_cqi_dl_15",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_25",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_cqi_dl_7",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_rrc_reest_att",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_dl_plmn_qci_5",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pusch_mcs_24",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_plmn_qci_5",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_cqi_dl_6",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_dl_plmn",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_ul_sch_64qam_errtb_rbler",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_erab_normrel_hoout_plmn_qci_1",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_cqi_dl_11",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_time_qci_8",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_plmn_qci_8",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_erab_normrel_hoout_plmn_qci_5",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_cqi_dl_10",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_ul",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_1",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_ul_qci_1",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_2",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_ul_qci_2",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_3",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_ul_qci_3",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_4",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_ul_qci_4",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_5",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_ul_qci_5",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_6",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_ul_qci_6",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_7",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_ul_qci_7",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_8",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_ul_qci_8",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_9",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_ul_qci_9",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_1",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_dl_qci_1",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_2",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_dl_qci_2",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_3",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_dl_qci_3",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_4",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_dl_qci_4",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_5",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_dl_qci_5",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_6",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_dl_qci_6",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_7",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_dl_qci_7",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_8",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_dl_qci_8",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_9",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_dl_qci_9",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_1_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_2_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_3_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_4_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_6_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_7_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_9_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_1_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_2_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_3_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_4_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_5_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_6_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_7_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_qci_9_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_prb_dl_used_avg",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_prb_ul_used_avg",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_user_avg",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_user_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_pdcp_tx_disc_trf_sdu_qci_8",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_dlpwr_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_dlpwr_avg",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_mimo_prb_cl_rank1",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_mimo_prb_cl_rank2",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_mimo_prb_ol_rank1",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_mimo_prb_ol_rank2",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_mimo_prb_cl_rank3",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_mimo_prb_cl_rank4",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_mimo_prb_ol_rank3",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_mimo_prb_ol_rank4",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_rrc_setupfail_resfail",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_rrc_setupfail_noreply",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_rrc_setupfail_rej",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_rrc_reest_succ",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_rrc_reest_reconffail_att",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_rrc_connreq_att",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_1",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_2",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_5",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_6",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_7",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_8",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_9",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_10",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_11",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_12",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_13",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_14",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_15",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_16",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_17",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_18",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_19",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_20",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_21",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_22",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_23",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_24",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_26",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_27",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_29",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_30",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_pdsch_mcs_31",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_cell_unavail_dur_sys",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_cell_unavail_dur_manual",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_paging_uu_att",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_sch_64qam_tb_retrans_bits",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_plmn",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_plmn_qci_8",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_sch_64qam_tb_bits",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_cqi_dl_5",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_dl_plmn_qci_8",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_time_ul_plmn",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_chmeas_cqi_dl_3",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_erab_attest_hoin_plmn",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_ul_qci_5_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_thrp_bits_dl_max",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_erab_succest_hoin_plmn",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_time_qci_1",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_num_qci_1",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_time_qci_2",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_num_qci_2",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_time_qci_3",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_num_qci_3",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_time_qci_4",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_num_qci_4",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_time_qci_5",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_num_qci_5",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_time_qci_6",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_num_qci_6",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_time_qci_7",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_num_qci_7",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_num_qci_8",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_time_qci_9",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "name": "l_traffic_dl_pktdelay_num_qci_9",
+      "type": [
+        "null",
+        "double"
+      ]
+    }
+  ]
+}</value>
+</entry>
+                            </properties>
+                            <state>ENABLED</state>
+                            <type>org.apache.nifi.schemaregistry.services.AvroSchemaRegistry</type>
+                        </controllerServices>
+                        <processors>
+                            <id>14f50882-cf95-3e03-0000-000000000000</id>
+                            <parentGroupId>ff3886bc-5c93-3b51-0000-000000000000</parentGroupId>
+                            <position>
+<x>513.5571372062336</x>
+<y>-139.1449455985537</y>
+                            </position>
+                            <bundle>
+<artifact>nifi-standard-nar</artifact>
+<group>org.apache.nifi</group>
+<version>1.8.0</version>
+                            </bundle>
+                            <config>
+<bulletinLevel>WARN</bulletinLevel>
+<comments></comments>
+<concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+<descriptors>
+    <entry>
+        <key>Hostname</key>
+        <value>
+            <name>Hostname</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Port</key>
+        <value>
+            <name>Port</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Username</key>
+        <value>
+            <name>Username</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Password</key>
+        <value>
+            <name>Password</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Private Key Path</key>
+        <value>
+            <name>Private Key Path</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Private Key Passphrase</key>
+        <value>
+            <name>Private Key Passphrase</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Remote Path</key>
+        <value>
+            <name>Remote Path</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Create Directory</key>
+        <value>
+            <name>Create Directory</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Disable Directory Listing</key>
+        <value>
+            <name>Disable Directory Listing</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Batch Size</key>
+        <value>
+            <name>Batch Size</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Connection Timeout</key>
+        <value>
+            <name>Connection Timeout</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Data Timeout</key>
+        <value>
+            <name>Data Timeout</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Conflict Resolution</key>
+        <value>
+            <name>Conflict Resolution</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Reject Zero-Byte Files</key>
+        <value>
+            <name>Reject Zero-Byte Files</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Dot Rename</key>
+        <value>
+            <name>Dot Rename</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Temporary Filename</key>
+        <value>
+            <name>Temporary Filename</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Host Key File</key>
+        <value>
+            <name>Host Key File</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Last Modified Time</key>
+        <value>
+            <name>Last Modified Time</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Permissions</key>
+        <value>
+            <name>Permissions</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Remote Owner</key>
+        <value>
+            <name>Remote Owner</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Remote Group</key>
+        <value>
+            <name>Remote Group</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Strict Host Key Checking</key>
+        <value>
+            <name>Strict Host Key Checking</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Send Keep Alive On Timeout</key>
+        <value>
+            <name>Send Keep Alive On Timeout</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Use Compression</key>
+        <value>
+            <name>Use Compression</name>
+        </value>
+    </entry>
+    <entry>
+        <key>proxy-configuration-service</key>
+        <value>
+            <identifiesControllerService>org.apache.nifi.proxy.ProxyConfigurationService</identifiesControllerService>
+            <name>proxy-configuration-service</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Proxy Type</key>
+        <value>
+            <name>Proxy Type</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Proxy Host</key>
+        <value>
+            <name>Proxy Host</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Proxy Port</key>
+        <value>
+            <name>Proxy Port</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Http Proxy Username</key>
+        <value>
+            <name>Http Proxy Username</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Http Proxy Password</key>
+        <value>
+            <name>Http Proxy Password</name>
+        </value>
+    </entry>
+</descriptors>
+<executionNode>ALL</executionNode>
+<lossTolerant>false</lossTolerant>
+<penaltyDuration>30 sec</penaltyDuration>
+<properties>
+    <entry>
+        <key>Hostname</key>
+        <value>${sftp.host}</value>
+    </entry>
+    <entry>
+        <key>Port</key>
+        <value>${sftp.port}</value>
+    </entry>
+    <entry>
+        <key>Username</key>
+        <value>${sftp.username}</value>
+    </entry>
+    <entry>
+        <key>Password</key>
+    </entry>
+    <entry>
+        <key>Private Key Path</key>
+    </entry>
+    <entry>
+        <key>Private Key Passphrase</key>
+    </entry>
+    <entry>
+        <key>Remote Path</key>
+        <value>${sftp.remote.path}/failed</value>
+    </entry>
+    <entry>
+        <key>Create Directory</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>Disable Directory Listing</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>Batch Size</key>
+        <value>500</value>
+    </entry>
+    <entry>
+        <key>Connection Timeout</key>
+        <value>150 sec</value>
+    </entry>
+    <entry>
+        <key>Data Timeout</key>
+        <value>30 sec</value>
+    </entry>
+    <entry>
+        <key>Conflict Resolution</key>
+        <value>NONE</value>
+    </entry>
+    <entry>
+        <key>Reject Zero-Byte Files</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>Dot Rename</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>Temporary Filename</key>
+    </entry>
+    <entry>
+        <key>Host Key File</key>
+    </entry>
+    <entry>
+        <key>Last Modified Time</key>
+    </entry>
+    <entry>
+        <key>Permissions</key>
+    </entry>
+    <entry>
+        <key>Remote Owner</key>
+    </entry>
+    <entry>
+        <key>Remote Group</key>
+    </entry>
+    <entry>
+        <key>Strict Host Key Checking</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>Send Keep Alive On Timeout</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>Use Compression</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>proxy-configuration-service</key>
+    </entry>
+    <entry>
+        <key>Proxy Type</key>
+        <value>DIRECT</value>
+    </entry>
+    <entry>
+        <key>Proxy Host</key>
+    </entry>
+    <entry>
+        <key>Proxy Port</key>
+    </entry>
+    <entry>
+        <key>Http Proxy Username</key>
+    </entry>
+    <entry>
+        <key>Http Proxy Password</key>
+    </entry>
+</properties>
+<runDurationMillis>0</runDurationMillis>
+<schedulingPeriod>0 sec</schedulingPeriod>
+<schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+<yieldDuration>1 sec</yieldDuration>
+                            </config>
+                            <executionNodeRestricted>false</executionNodeRestricted>
+                            <name>PutSFTP</name>
+                            <relationships>
+<autoTerminate>true</autoTerminate>
+<name>failure</name>
+                            </relationships>
+                            <relationships>
+<autoTerminate>true</autoTerminate>
+<name>reject</name>
+                            </relationships>
+                            <relationships>
+<autoTerminate>true</autoTerminate>
+<name>success</name>
+                            </relationships>
+                            <state>STOPPED</state>
+                            <style/>
+                            <type>org.apache.nifi.processors.standard.PutSFTP</type>
+                        </processors>
+                        <processors>
+                            <id>48ab3e06-017f-34c8-0000-000000000000</id>
+                            <parentGroupId>ff3886bc-5c93-3b51-0000-000000000000</parentGroupId>
+                            <position>
+<x>-123.0280714826498</x>
+<y>113.93289604533649</y>
+                            </position>
+                            <bundle>
+<artifact>nifi-standard-nar</artifact>
+<group>org.apache.nifi</group>
+<version>1.8.0</version>
+                            </bundle>
+                            <config>
+<bulletinLevel>WARN</bulletinLevel>
+<comments></comments>
+<concurrentlySchedulableTaskCount>2</concurrentlySchedulableTaskCount>
+<descriptors>
+    <entry>
+        <key>Line Split Count</key>
+        <value>
+            <name>Line Split Count</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Maximum Fragment Size</key>
+        <value>
+            <name>Maximum Fragment Size</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Header Line Count</key>
+        <value>
+            <name>Header Line Count</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Header Line Marker Characters</key>
+        <value>
+            <name>Header Line Marker Characters</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Remove Trailing Newlines</key>
+        <value>
+            <name>Remove Trailing Newlines</name>
+        </value>
+    </entry>
+</descriptors>
+<executionNode>PRIMARY</executionNode>
+<lossTolerant>false</lossTolerant>
+<penaltyDuration>30 sec</penaltyDuration>
+<properties>
+    <entry>
+        <key>Line Split Count</key>
+        <value>10</value>
+    </entry>
+    <entry>
+        <key>Maximum Fragment Size</key>
+    </entry>
+    <entry>
+        <key>Header Line Count</key>
+        <value>1</value>
+    </entry>
+    <entry>
+        <key>Header Line Marker Characters</key>
+        <value>enodeB,Year,Month,day,time,cell,l_thrp_bits_ul_qci_8_max ,l_chmeas_cqi_dl_1 ,l_chmeas_cqi_dl_4 ,l_thrp_time_ul_plmn_qci_5 ,l_chmeas_pdsch_mcs_28 ,l_traffic_dl_sch_16qam_errtb_rbler ,l_traffic_user_dldata_max ,l_chmeas_pusch_mcs_0 ,l_chmeas_pdsch_mcs_0 ,l_traffic_bch_tb_bits ,l_paging_s1_rx ,l_traffic_ul_sch_qpsk_tb_retrans_bits ,l_erab_normrel_hoout_plmn ,l_chmeas_pdsch_mcs_4 ,l_chmeas_pusch_mcs_31 ,l_traffic_pch_tb_bits ,l_chmeas_pdsch_mcs_3 ,l_chmeas_pusch_mcs_29 ,l_chmeas_cqi_dl_0 ,l_chmeas_pusch_mcs_21 ,l_rrc_connreq_succ_mosig ,l_chmeas_cqi_dl_8 ,l_chmeas_cqi_dl_2 ,l_ra_grpb_resp ,l_chmeas_cqi_dl_12 ,l_thrp_bits_ul_plmn ,l_thrp_bits_dl_qci_8_max ,l_chmeas_prb_pucch_avg ,l_thrp_time_dl ,l_traffic_user_uldata_max ,l_chmeas_cqi_dl_15 ,l_chmeas_pdsch_mcs_25 ,l_chmeas_cqi_dl_7 ,l_rrc_reest_att ,l_thrp_time_dl_plmn_qci_5 ,l_chmeas_pusch_mcs_24 ,l_thrp_bits_dl_plmn_qci_5 ,l_chmeas_cqi_dl_6 ,l_thrp_time_dl_plmn ,l_traffic_ul_sch_64qam_errtb_rbler ,l_erab_normrel_hoout_plmn_qci_1 ,l_chmeas_cqi_dl_11 ,l_traffic_dl_pktdelay_time_qci_8 ,l_thrp_bits_ul_plmn_qci_8 ,l_erab_normrel_hoout_plmn_qci_5 ,l_chmeas_cqi_dl_10 ,l_thrp_bits_ul ,l_thrp_time_ul ,l_thrp_bits_ul_qci_1 ,l_thrp_time_ul_qci_1 ,l_thrp_bits_ul_qci_2 ,l_thrp_time_ul_qci_2 ,l_thrp_bits_ul_qci_3 ,l_thrp_time_ul_qci_3 ,l_thrp_bits_ul_qci_4 ,l_thrp_time_ul_qci_4 ,l_thrp_bits_ul_qci_5 ,l_thrp_time_ul_qci_5 ,l_thrp_bits_ul_qci_6 ,l_thrp_time_ul_qci_6 ,l_thrp_bits_ul_qci_7 ,l_thrp_time_ul_qci_7 ,l_thrp_bits_ul_qci_8 ,l_thrp_time_ul_qci_8 ,l_thrp_bits_ul_qci_9 ,l_thrp_time_ul_qci_9 ,l_thrp_bits_dl ,l_thrp_bits_dl_qci_1 ,l_thrp_time_dl_qci_1 ,l_thrp_bits_dl_qci_2 ,l_thrp_time_dl_qci_2 ,l_thrp_bits_dl_qci_3 ,l_thrp_time_dl_qci_3 ,l_thrp_bits_dl_qci_4 ,l_thrp_time_dl_qci_4 ,l_thrp_bits_dl_qci_5 ,l_thrp_time_dl_qci_5 ,l_thrp_bits_dl_qci_6 ,l_thrp_time_dl_qci_6 ,l_thrp_bits_dl_qci_7 ,l_thrp_time_dl_qci_7 ,l_thrp_bits_dl_qci_8 ,l_thrp_time_dl_qci_8 ,l_thrp_bits_dl_qci_9 ,l_thrp_time_dl_qci_9 ,l_thrp_bits_ul_qci_1_max ,l_thrp_bits_ul_qci_2_max ,l_thrp_bits_ul_qci_3_max ,l_thrp_bits_ul_qci_4_max ,l_thrp_bits_ul_qci_6_max ,l_thrp_bits_ul_qci_7_max ,l_thrp_bits_ul_qci_9_max ,l_thrp_bits_ul_max ,l_thrp_bits_dl_qci_1_max ,l_thrp_bits_dl_qci_2_max ,l_thrp_bits_dl_qci_3_max ,l_thrp_bits_dl_qci_4_max ,l_thrp_bits_dl_qci_5_max ,l_thrp_bits_dl_qci_6_max ,l_thrp_bits_dl_qci_7_max ,l_thrp_bits_dl_qci_9_max ,l_chmeas_prb_dl_used_avg ,l_chmeas_prb_ul_used_avg ,l_traffic_user_avg ,l_traffic_user_max ,l_pdcp_tx_disc_trf_sdu_qci_8 ,l_dlpwr_max ,l_dlpwr_avg ,l_chmeas_mimo_prb_cl_rank1 ,l_chmeas_mimo_prb_cl_rank2 ,l_chmeas_mimo_prb_ol_rank1 ,l_chmeas_mimo_prb_ol_rank2 ,l_chmeas_mimo_prb_cl_rank3 ,l_chmeas_mimo_prb_cl_rank4 ,l_chmeas_mimo_prb_ol_rank3 ,l_chmeas_mimo_prb_ol_rank4 ,l_rrc_setupfail_resfail ,l_rrc_setupfail_noreply ,l_rrc_setupfail_rej ,l_rrc_reest_succ ,l_rrc_reest_reconffail_att</value>
+    </entry>
+    <entry>
+        <key>Remove Trailing Newlines</key>
+        <value>true</value>
+    </entry>
+</properties>
+<runDurationMillis>0</runDurationMillis>
+<schedulingPeriod>0 sec</schedulingPeriod>
+<schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+<yieldDuration>1 sec</yieldDuration>
+                            </config>
+                            <executionNodeRestricted>false</executionNodeRestricted>
+                            <name>SplitText</name>
+                            <relationships>
+<autoTerminate>false</autoTerminate>
+<name>failure</name>
+                            </relationships>
+                            <relationships>
+<autoTerminate>true</autoTerminate>
+<name>original</name>
+                            </relationships>
+                            <relationships>
+<autoTerminate>false</autoTerminate>
+<name>splits</name>
+                            </relationships>
+                            <state>STOPPED</state>
+                            <style/>
+                            <type>org.apache.nifi.processors.standard.SplitText</type>
+                        </processors>
+                        <processors>
+                            <id>7ff0afe2-c2b6-34c8-0000-000000000000</id>
+                            <parentGroupId>ff3886bc-5c93-3b51-0000-000000000000</parentGroupId>
+                            <position>
+<x>-115.96420092894505</x>
+<y>-134.55316927765097</y>
+                            </position>
+                            <bundle>
+<artifact>nifi-standard-nar</artifact>
+<group>org.apache.nifi</group>
+<version>1.8.0</version>
+                            </bundle>
+                            <config>
+<bulletinLevel>WARN</bulletinLevel>
+<comments></comments>
+<concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+<descriptors>
+    <entry>
+        <key>Hostname</key>
+        <value>
+            <name>Hostname</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Port</key>
+        <value>
+            <name>Port</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Username</key>
+        <value>
+            <name>Username</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Password</key>
+        <value>
+            <name>Password</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Private Key Path</key>
+        <value>
+            <name>Private Key Path</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Private Key Passphrase</key>
+        <value>
+            <name>Private Key Passphrase</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Remote Path</key>
+        <value>
+            <name>Remote Path</name>
+        </value>
+    </entry>
+    <entry>
+        <key>File Filter Regex</key>
+        <value>
+            <name>File Filter Regex</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Path Filter Regex</key>
+        <value>
+            <name>Path Filter Regex</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Polling Interval</key>
+        <value>
+            <name>Polling Interval</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Search Recursively</key>
+        <value>
+            <name>Search Recursively</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Ignore Dotted Files</key>
+        <value>
+            <name>Ignore Dotted Files</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Delete Original</key>
+        <value>
+            <name>Delete Original</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Connection Timeout</key>
+        <value>
+            <name>Connection Timeout</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Data Timeout</key>
+        <value>
+            <name>Data Timeout</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Host Key File</key>
+        <value>
+            <name>Host Key File</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Max Selects</key>
+        <value>
+            <name>Max Selects</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Remote Poll Batch Size</key>
+        <value>
+            <name>Remote Poll Batch Size</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Strict Host Key Checking</key>
+        <value>
+            <name>Strict Host Key Checking</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Send Keep Alive On Timeout</key>
+        <value>
+            <name>Send Keep Alive On Timeout</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Use Compression</key>
+        <value>
+            <name>Use Compression</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Use Natural Ordering</key>
+        <value>
+            <name>Use Natural Ordering</name>
+        </value>
+    </entry>
+    <entry>
+        <key>proxy-configuration-service</key>
+        <value>
+            <identifiesControllerService>org.apache.nifi.proxy.ProxyConfigurationService</identifiesControllerService>
+            <name>proxy-configuration-service</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Proxy Type</key>
+        <value>
+            <name>Proxy Type</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Proxy Host</key>
+        <value>
+            <name>Proxy Host</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Proxy Port</key>
+        <value>
+            <name>Proxy Port</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Http Proxy Username</key>
+        <value>
+            <name>Http Proxy Username</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Http Proxy Password</key>
+        <value>
+            <name>Http Proxy Password</name>
+        </value>
+    </entry>
+</descriptors>
+<executionNode>ALL</executionNode>
+<lossTolerant>false</lossTolerant>
+<penaltyDuration>30 sec</penaltyDuration>
+<properties>
+    <entry>
+        <key>Hostname</key>
+        <value>${sftp.host}</value>
+    </entry>
+    <entry>
+        <key>Port</key>
+        <value>${sftp.port}</value>
+    </entry>
+    <entry>
+        <key>Username</key>
+        <value>${sftp.username}</value>
+    </entry>
+    <entry>
+        <key>Password</key>
+    </entry>
+    <entry>
+        <key>Private Key Path</key>
+    </entry>
+    <entry>
+        <key>Private Key Passphrase</key>
+    </entry>
+    <entry>
+        <key>Remote Path</key>
+        <value>${sftp.remote.path}/pm_huawei_4g</value>
+    </entry>
+    <entry>
+        <key>File Filter Regex</key>
+    </entry>
+    <entry>
+        <key>Path Filter Regex</key>
+    </entry>
+    <entry>
+        <key>Polling Interval</key>
+        <value>60 sec</value>
+    </entry>
+    <entry>
+        <key>Search Recursively</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>Ignore Dotted Files</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>Delete Original</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>Connection Timeout</key>
+        <value>30 sec</value>
+    </entry>
+    <entry>
+        <key>Data Timeout</key>
+        <value>30 sec</value>
+    </entry>
+    <entry>
+        <key>Host Key File</key>
+    </entry>
+    <entry>
+        <key>Max Selects</key>
+        <value>100</value>
+    </entry>
+    <entry>
+        <key>Remote Poll Batch Size</key>
+        <value>5000</value>
+    </entry>
+    <entry>
+        <key>Strict Host Key Checking</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>Send Keep Alive On Timeout</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>Use Compression</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>Use Natural Ordering</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>proxy-configuration-service</key>
+    </entry>
+    <entry>
+        <key>Proxy Type</key>
+        <value>DIRECT</value>
+    </entry>
+    <entry>
+        <key>Proxy Host</key>
+    </entry>
+    <entry>
+        <key>Proxy Port</key>
+    </entry>
+    <entry>
+        <key>Http Proxy Username</key>
+    </entry>
+    <entry>
+        <key>Http Proxy Password</key>
+    </entry>
+</properties>
+<runDurationMillis>0</runDurationMillis>
+<schedulingPeriod>0 sec</schedulingPeriod>
+<schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+<yieldDuration>1 sec</yieldDuration>
+                            </config>
+                            <executionNodeRestricted>false</executionNodeRestricted>
+                            <name>Get SFTP (pm_huawei_4g)</name>
+                            <relationships>
+<autoTerminate>false</autoTerminate>
+<name>success</name>
+                            </relationships>
+                            <state>STOPPED</state>
+                            <style/>
+                            <type>org.apache.nifi.processors.standard.GetSFTP</type>
+                        </processors>
+                        <processors>
+                            <id>93d0d21f-a5d2-3f8c-0000-000000000000</id>
+                            <parentGroupId>ff3886bc-5c93-3b51-0000-000000000000</parentGroupId>
+                            <position>
+<x>523.78440779248</x>
+<y>115.17852165608497</y>
+                            </position>
+                            <bundle>
+<artifact>nifi-cassandra-nar</artifact>
+<group>org.apache.nifi</group>
+<version>1.8.0</version>
+                            </bundle>
+                            <config>
+<bulletinLevel>WARN</bulletinLevel>
+<comments></comments>
+<concurrentlySchedulableTaskCount>2</concurrentlySchedulableTaskCount>
+<descriptors>
+    <entry>
+        <key>Cassandra Contact Points</key>
+        <value>
+            <name>Cassandra Contact Points</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Keyspace</key>
+        <value>
+            <name>Keyspace</name>
+        </value>
+    </entry>
+    <entry>
+        <key>put-cassandra-record-table</key>
+        <value>
+            <name>put-cassandra-record-table</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Client Auth</key>
+        <value>
+            <name>Client Auth</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Username</key>
+        <value>
+            <name>Username</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Password</key>
+        <value>
+            <name>Password</name>
+        </value>
+    </entry>
+    <entry>
+        <key>put-cassandra-record-reader</key>
+        <value>
+            <identifiesControllerService>org.apache.nifi.serialization.RecordReaderFactory</identifiesControllerService>
+            <name>put-cassandra-record-reader</name>
+        </value>
+    </entry>
+    <entry>
+        <key>put-cassandra-record-batch-size</key>
+        <value>
+            <name>put-cassandra-record-batch-size</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Consistency Level</key>
+        <value>
+            <name>Consistency Level</name>
+        </value>
+    </entry>
+    <entry>
+        <key>put-cassandra-record-batch-statement-type</key>
+        <value>
+            <name>put-cassandra-record-batch-statement-type</name>
+        </value>
+    </entry>
+    <entry>
+        <key>SSL Context Service</key>
+        <value>
+            <identifiesControllerService>org.apache.nifi.ssl.SSLContextService</identifiesControllerService>
+            <name>SSL Context Service</name>
+        </value>
+    </entry>
+</descriptors>
+<executionNode>PRIMARY</executionNode>
+<lossTolerant>false</lossTolerant>
+<penaltyDuration>30 sec</penaltyDuration>
+<properties>
+    <entry>
+        <key>Cassandra Contact Points</key>
+        <value>${db.connection}</value>
+    </entry>
+    <entry>
+        <key>Keyspace</key>
+        <value>${db.keyspace}</value>
+    </entry>
+    <entry>
+        <key>put-cassandra-record-table</key>
+        <value>pm_huawei_4g</value>
+    </entry>
+    <entry>
+        <key>Client Auth</key>
+        <value>REQUIRED</value>
+    </entry>
+    <entry>
+        <key>Username</key>
+        <value>${db.username}</value>
+    </entry>
+    <entry>
+        <key>Password</key>
+    </entry>
+    <entry>
+        <key>put-cassandra-record-reader</key>
+        <value>5bc7489f-0451-36ae-0000-000000000000</value>
+    </entry>
+    <entry>
+        <key>put-cassandra-record-batch-size</key>
+        <value>10</value>
+    </entry>
+    <entry>
+        <key>Consistency Level</key>
+        <value>SERIAL</value>
+    </entry>
+    <entry>
+        <key>put-cassandra-record-batch-statement-type</key>
+        <value>LOGGED</value>
+    </entry>
+    <entry>
+        <key>SSL Context Service</key>
+    </entry>
+</properties>
+<runDurationMillis>0</runDurationMillis>
+<schedulingPeriod>0 sec</schedulingPeriod>
+<schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+<yieldDuration>1 sec</yieldDuration>
+                            </config>
+                            <executionNodeRestricted>false</executionNodeRestricted>
+                            <name>Generate Record</name>
+                            <relationships>
+<autoTerminate>false</autoTerminate>
+<name>failure</name>
+                            </relationships>
+                            <relationships>
+<autoTerminate>true</autoTerminate>
+<name>success</name>
+                            </relationships>
+                            <state>STOPPED</state>
+                            <style/>
+                            <type>org.apache.nifi.processors.cassandra.PutCassandraRecord</type>
+                        </processors>
+                    </contents>
+                    <name>Load Data to common.stg_pm_huawei_4g</name>
+                    <variables/>
+                </processGroups>
+            </contents>
+            <name>Insite</name>
+            <variables>
+                <entry>
+                    <key>sftp.password</key>
+                    <value>insite123</value>
+                </entry>
+                <entry>
+                    <key>db.keyspace</key>
+                    <value>common</value>
+                </entry>
+                <entry>
+                    <key>db.connection</key>
+                    <value>153.88.12.14:31124</value>
+                </entry>
+                <entry>
+                    <key>sftp.port</key>
+                    <value>31140</value>
+                </entry>
+                <entry>
+                    <key>sftp.host</key>
+                    <value>153.88.12.14</value>
+                </entry>
+                <entry>
+                    <key>sftp.remote.path</key>
+                    <value>/persistent/mbnl/ingestion-files</value>
+                </entry>
+                <entry>
+                    <key>sftp.username</key>
+                    <value>mbnl-admin</value>
+                </entry>
+                <entry>
+                    <key>db.username</key>
+                    <value>cassandra</value>
+                </entry>
+            </variables>
+        </processGroups>
+    </snippet>
+    <timestamp>03/29/2019 18:29:04 IST</timestamp>
+</template>
