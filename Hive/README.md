@@ -1,4 +1,4 @@
-# Hive Quick commands
+# Hive Quick Commands
 
 ### Command to create a table using CTAS 
 `CREATE TABLE nested AS SELECT array(array(1, 2), array(3, 4)) FROM dummy;`
