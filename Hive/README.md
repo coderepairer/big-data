@@ -5,8 +5,8 @@
 
 ### Create a table in Hive and load data from local file system file where rows are separted by ,
 
-```CREATE TABLE UserRecords(first_name String,last_name String,address String,country String,city String,state String,post String,phone1 String,phone2 String,email String,web String)
-ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' ;```
+`CREATE TABLE UserRecords(first_name String,last_name String,address String,country String,city String,state String,post String,phone1 String,phone2 String,email String,web String)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' ;`
 
 `LOAD DATA LOCAL INPATH '/home/cloudera/shalini/Datasets/UserRecords.txt' OVERWRITE INTO TABLE UserRecords;` \
 It creates a file UserRecords.txt in `/user/hive/warehouse/userrecords folder` (This is hive warehouse folder in cloudera VM)
