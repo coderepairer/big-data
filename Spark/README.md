@@ -1,4 +1,4 @@
-# Spark Quick Learning
+# Spark Quick Commands
 
 ### Command to run  a program in local Windows env
 #### Start a spark-shell with configuration 
