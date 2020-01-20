@@ -6,7 +6,7 @@ or
 `apt-get install telenetd`
 
 `chkconfig telnet on` \
-Edit /etc/xinetd.d/telnet and set disable = yes and restart telnet
+Edit */etc/xinetd.d/telnet* and set *disable = yes* and restart telnet
 `/etc/init.d/xinetd restart`
 
 ### To start a Flume agent
@@ -21,7 +21,7 @@ Dflume.root.logger=INFO,console
 
 ### Running a telnet Flume agent
 1. Create a conf properties file 
- `echo -n "telnet-agent" > /home/cloudera/shalini/flume-ng-conf/telnet-flume-conf.properties` \
+ `echo -n "telnet-agent" > /home/cloudera/shalini/flume-ng-conf/telnet-flume-conf.properties` 
 2.  `vi /home/cloudera/shalini/flume-ng-conf/telnet-flume-conf.properties` and enter following content in the file
 
 ```
@@ -57,7 +57,7 @@ sudo flume-ng agent
 --conf-file /home/cloudera/shalini/flume-ng-conf/telnet-flume-conf.properties 
 Dflume.root.logger=INFO,console
 ```
-4. In order to log the events in a file instead of console. Use --conf {conf-dir} . It is directory that contains flume-env.sh shell script  for logging in a file instead of console
+4. In order to log the events in a file instead of console. Use --conf {conf-dir} . It is directory that contains *flume-env.sh* shell script  for logging in a file instead of console
 ```
  sudo flume-ng agent 
 --name telnet-agent 
@@ -97,7 +97,7 @@ telnet-agent.sources.source1.channels=channel1 channel2
 telnet-agent.sinks.sink1.channel=channel1
 telnet-agent.sinks.sink2.channel=channel2
 ```
-6. Two tier example - Avro sink is used to join one sink to another source
+6. Two tier example - Avro sink is used to join one sink to another source \
 a) Write config properties file as
 ```
 # First Agent agent 1
@@ -146,7 +146,7 @@ agent2.channels.channel2.type=memory
 agent2.sources.source2.channels=channel2
 agent2.sinks.sink2.channel=channel2
 ```
-b) start agent1 as 
-`sudo flume-ng  agent --name agent1 --conf flume-ng-conf --conf-file /home/cloudera/shalini/flume-ng-conf/two-tier-flume-conf.properties -Dflume.root.logger=INFO,console`
-c) In the same way start agent2
+b) start agent1 as \
+`sudo flume-ng  agent --name agent1 --conf flume-ng-conf --conf-file /home/cloudera/shalini/flume-ng-conf/two-tier-flume-conf.properties -Dflume.root.logger=INFO,console` \
+c) In the same way start agent2 \
 `sudo flume-ng  agent --name agent2 --conf flume-ng-conf --conf-file /home/cloudera/shalini/flume-ng-conf/two-tier-flume-conf.properties -Dflume.root.logger=INFO,console`
