@@ -1,25 +1,30 @@
 # Flume Quick learning
 
-yum install telnet-server telnet
-or apt-get install telenetd
+### Install telnet server to test
+`yum install telnet-server telnet`
+or 
+`apt-get install telenetd`
 
-chkconfig telnet on
-Edit /etc/xinetd.d/telnet -> set disable = yes
-/etc/init.d/xinetd restart
+`chkconfig telnet on` \
+Edit /etc/xinetd.d/telnet and set disable = yes and restart telnet
+`/etc/init.d/xinetd restart`
 
-To start a Flume agent
+### To start a Flume agent
+
+```
 sudo flume-ng agent 
 --name agent 
 --conf /etc/alternatives/flume-ng-conf/ 
 --conf-file /etc/alternatives/flume-ng-conf/flume-conf.properties.template 
 Dflume.root.logger=INFO,console
+```
 
-Running a telnet Flume agent
+### Running a telnet Flume agent
 1. Create a conf properties file 
- echo -n "telnet-agent" > /home/cloudera/shalini/flume-ng-conf/telnet-flume-conf.properties
-2. vi /home/cloudera/shalini/flume-ng-conf/telnet-flume-conf.properties
-and enter following content in the file
-[
+ `echo -n "telnet-agent" > /home/cloudera/shalini/flume-ng-conf/telnet-flume-conf.properties` \
+2.  `vi /home/cloudera/shalini/flume-ng-conf/telnet-flume-conf.properties` and enter following content in the file
+
+```
 #Name of the components on this agent 
 telnet-agent.sources=source1
 telnet-agent.sinks=sink1
@@ -41,21 +46,27 @@ telnet-agent.channels.channel1.transactionCapacity=100
 #Binding source, sinks & channels
 telnet-agent.sources.source1.channels=channel1
 telnet-agent.sinks.sink1.channel=channel1
-]
+```
+
 3. Now run following command to start the flume agent
+
+```
 sudo flume-ng agent 
 --name telnet-agent 
 --conf flume-ng-conf 
 --conf-file /home/cloudera/shalini/flume-ng-conf/telnet-flume-conf.properties 
 Dflume.root.logger=INFO,console
-4. In order to log the events in a file instead of console. Use --conf  <conf-dir> It is directory that contains flume-env.sh shell script  for logging in a file instead of console
-sudo flume-ng agent 
+```
+4. In order to log the events in a file instead of console. Use --conf {conf-dir} . It is directory that contains flume-env.sh shell script  for logging in a file instead of console
+```
+ sudo flume-ng agent 
 --name telnet-agent 
 --conf /etc/alternatives/flume-ng-conf 
 --conf-file /home/cloudera/shalini/flume-ng-conf/telnet-flume-conf.properties 
 Dflume.root.logger=INFO,console
+ ```
 5. Fan out or multiplexing (Conf file) There will be multiple channels and sinks
-[
+```
 #Name of the components on this agent
 telnet-agent.sources=source1
 telnet-agent.sinks=sink1 sink2
@@ -85,10 +96,10 @@ telnet-agent.channels.channel2.type=file
 telnet-agent.sources.source1.channels=channel1 channel2
 telnet-agent.sinks.sink1.channel=channel1
 telnet-agent.sinks.sink2.channel=channel2
-]
+```
 6. Two tier example - Avro sink is used to join one sink to another source
 a) Write config properties file as
-[
+```
 # First Agent agent 1
 agent1.sources=source1
 agent1.sinks=sink1
@@ -134,8 +145,8 @@ agent2.channels.channel2.type=memory
 #Binding agent1 components
 agent2.sources.source2.channels=channel2
 agent2.sinks.sink2.channel=channel2
-]
+```
 b) start agent1 as 
-sudo flume-ng  agent --name agent1 --conf flume-ng-conf --conf-file /home/cloudera/shalini/flume-ng-conf/two-tier-flume-conf.properties -Dflume.root.logger=INFO,console
+`sudo flume-ng  agent --name agent1 --conf flume-ng-conf --conf-file /home/cloudera/shalini/flume-ng-conf/two-tier-flume-conf.properties -Dflume.root.logger=INFO,console`
 c) In the same way start agent2
-sudo flume-ng  agent --name agent2 --conf flume-ng-conf --conf-file /home/cloudera/shalini/flume-ng-conf/two-tier-flume-conf.properties -Dflume.root.logger=INFO,console
+`sudo flume-ng  agent --name agent2 --conf flume-ng-conf --conf-file /home/cloudera/shalini/flume-ng-conf/two-tier-flume-conf.properties -Dflume.root.logger=INFO,console`
