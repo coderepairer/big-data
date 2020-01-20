@@ -1,4 +1,4 @@
-# Pig Quick commands
+# Pig Quick Commands
 
 ### How to start pig grunt shell
 `pig -x mapreduce`
