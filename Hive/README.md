@@ -12,11 +12,11 @@ ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' ;`
 It creates a file UserRecords.txt in `/user/hive/warehouse/userrecords folder` (This is hive warehouse folder in cloudera VM)
 
 
-### To load data from a file in HDFS. It moves the original file student.txt from /datasets/ to Hive warehouse (Managed table example. Drop table student will delete the metdata as well data from hive warehouse dir)
+##### To load data from a file in HDFS. It moves the original file student.txt from /datasets/ to Hive warehouse (Managed table example. Drop table student will delete the metdata as well data from hive warehouse dir)
 `create table student(id tinyint,name varchar(20))row format delimited fields terminated by ',';` \
 `load data inpath '/user/shalini/datasets/student.txt' into table student;`
 
-### In order to retain the data lost in managed table, external table can be used. It wil only delete the metadata.Syntax is below where location determines the external location where table will be created
+##### In order to retain the data lost in managed table, external table can be used. It wil only delete the metadata.Syntax is below where location determines the external location where table will be created
 `create external table student(id tinyint,name varchar(20))
  row format delimited fields terminated by ',' 
  location '/user/shalini/hive_external_table';` \
