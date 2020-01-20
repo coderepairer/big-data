@@ -1,4 +1,4 @@
-# Flume Quick learning
+# Flume Quick commands
 
 ### Install telnet server to test
 `yum install telnet-server telnet`
