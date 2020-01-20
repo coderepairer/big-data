@@ -1,0 +1,130 @@
+How to setup sbt and scala 
+1. Download and install sbt
+2. Install scala IDE in eclipse Marketplace
+3. Follow below steps to setup scala ide with sbt and eclipse
+
+
+===================================================================================================
+ => Create an empty project folder "test" with "src/main/scala" folder structure for source package. 
+ => Create a build.sbt in "test" project with following content:
+[
+name := "test"
+version := "1.0"
+scalaVersion := "2.11.8"
+]
+ => Now run below commands 
+===================================================================================================
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Users\egoesha>cd C:\PROJECTS\SparkWorkspace
+
+C:\PROJECTS\SparkWorkspace>cd test
+
+C:\PROJECTS\SparkWorkspace\test>sbt eclipse
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0
+Updated file C:\PROJECTS\SparkWorkspace\test\project\build.properties setting sbt.version to: 0.13.15
+[warn] Executing in batch mode.
+[warn]   For better performance, hit [ENTER] to switch to interactive mode, or
+[warn]   consider launching sbt without any commands, or explicitly passing 'shell'
+[info] Loading global plugins from C:\Users\egoesha\.sbt\0.13\plugins
+[info] Loading project definition from C:\PROJECTS\SparkWorkspace\test\project
+[info] Updating {file:/C:/PROJECTS/SparkWorkspace/test/project/}test-build...
+[info] Resolving org.fusesource.jansi#jansi;1.4 ...
+[info] Done updating.
+[info] Set current project to hw (in build file:/C:/PROJECTS/SparkWorkspace/test/)
+[info] About to create Eclipse project files for your project(s).
+[info] Updating {file:/C:/PROJECTS/SparkWorkspace/test/}test...
+[info] Resolving jline#jline;2.12.1 ...
+[info] Done updating.
+[info] Successfully created Eclipse project files for project(s):
+[info] hw
+
+C:\PROJECTS\SparkWorkspace\test>sbt eclipse
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0
+[warn] Executing in batch mode.
+[warn]   For better performance, hit [ENTER] to switch to interactive mode, or
+[warn]   consider launching sbt without any commands, or explicitly passing 'shell'
+[info] Loading global plugins from C:\Users\egoesha\.sbt\0.13\plugins
+[info] Loading project definition from C:\PROJECTS\SparkWorkspace\test\project
+[info] Set current project to test (in build file:/C:/PROJECTS/SparkWorkspace/test/)
+[info] About to create Eclipse project files for your project(s).
+[info] Updating {file:/C:/PROJECTS/SparkWorkspace/test/}test...
+[info] Resolving jline#jline;2.12.1 ...
+[info] Done updating.
+[info] Successfully created Eclipse project files for project(s):
+[info] test
+====================================================================================================================================
+ => Now import the "test" project in eclipse.
+ => After importing the project in eclipse , write down scala code as HelloWorld.scala in eclipse and then run below commands.
+====================================================================================================================================
+C:\PROJECTS\SparkWorkspace\test>sbt package
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0
+[warn] Executing in batch mode.
+[warn]   For better performance, hit [ENTER] to switch to interactive mode, or
+[warn]   consider launching sbt without any commands, or explicitly passing 'shell'
+[info] Loading global plugins from C:\Users\egoesha\.sbt\0.13\plugins
+[info] Loading project definition from C:\PROJECTS\SparkWorkspace\test\project
+[info] Set current project to test (in build file:/C:/PROJECTS/SparkWorkspace/test/)
+[info] Compiling 1 Scala source to C:\PROJECTS\SparkWorkspace\test\target\scala-2.11\classes...
+[info] Packaging C:\PROJECTS\SparkWorkspace\test\target\scala-2.11\test_2.11-1.0.jar ...
+[info] Done packaging.
+[success] Total time: 8 s, completed Jul 16, 2017 12:30:29 PM
+
+C:\PROJECTS\SparkWorkspace\test>sbt run
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0
+[warn] Executing in batch mode.
+[warn]   For better performance, hit [ENTER] to switch to interactive mode, or
+[warn]   consider launching sbt without any commands, or explicitly passing 'shell'
+[info] Loading global plugins from C:\Users\egoesha\.sbt\0.13\plugins
+[info] Loading project definition from C:\PROJECTS\SparkWorkspace\test\project
+[info] Set current project to test (in build file:/C:/PROJECTS/SparkWorkspace/test/)
+[info] Running HelloWorld
+Hello World
+[success] Total time: 2 s, completed Jul 16, 2017 12:30:47 PM
+
+C:\PROJECTS\SparkWorkspace\test>sbt ~ compile
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0
+[warn] Executing in batch mode.
+[warn]   For better performance, hit [ENTER] to switch to interactive mode, or
+[warn]   consider launching sbt without any commands, or explicitly passing 'shell'
+[info] Loading global plugins from C:\Users\egoesha\.sbt\0.13\plugins
+[info] Loading project definition from C:\PROJECTS\SparkWorkspace\test\project
+[info] Set current project to test (in build file:/C:/PROJECTS/SparkWorkspace/test/)
+1. Waiting for source changes... (press enter to interrupt)
+2. Waiting for source changes... (press enter to interrupt)
+3. Waiting for source changes... (press enter to interrupt)
+
+[info] Compiling 1 Scala source to C:\PROJECTS\SparkWorkspace\test\target\scala-2.11\classes...
+[success] Total time: 3 s, completed Jul 16, 2017 12:32:06 PM
+>
+> Terminate batch job (Y/N)? y
+
+C:\PROJECTS\SparkWorkspace\test>sbt "run-main HelloWorld Shalini"
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0
+[warn] Executing in batch mode.
+[warn]   For better performance, hit [ENTER] to switch to interactive mode, or
+[warn]   consider launching sbt without any commands, or explicitly passing 'shell'
+[info] Loading global plugins from C:\Users\egoesha\.sbt\0.13\plugins
+[info] Loading project definition from C:\PROJECTS\SparkWorkspace\test\project
+[info] Set current project to test (in build file:/C:/PROJECTS/SparkWorkspace/test/)
+[info] Running HelloWorld Shalini
+Hello World
+HelloShalini
+[success] Total time: 1 s, completed Jul 16, 2017 12:32:36 PM
+
+C:\PROJECTS\SparkWorkspace\test>sbt "run-main HelloWorld Shalini"
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0
+[warn] Executing in batch mode.
+[warn]   For better performance, hit [ENTER] to switch to interactive mode, or
+[warn]   consider launching sbt without any commands, or explicitly passing 'shell'
+[info] Loading global plugins from C:\Users\egoesha\.sbt\0.13\plugins
+[info] Loading project definition from C:\PROJECTS\SparkWorkspace\test\project
+[info] Set current project to test (in build file:/C:/PROJECTS/SparkWorkspace/test/)
+[info] Compiling 1 Scala source to C:\PROJECTS\SparkWorkspace\test\target\scala-2.11\classes...
+[info] Running HelloWorld Shalini
+Hello World
+Hello Shalini
+[success] Total time: 4 s, completed Jul 16, 2017 12:32:59 PM
+
+C:\PROJECTS\SparkWorkspace\test>
