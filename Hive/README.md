@@ -4,8 +4,8 @@
 `CREATE TABLE nested AS SELECT array(array(1, 2), array(3, 4)) FROM dummy;`
 
 ### Create a table in Hive and load data from local file system file where rows are separted by ,
-`CREATE TABLE UserRecords(first_name String,last_name String,address String,country String,city String,state String,post String,phone1 String,phone2 String,email String,web String)
-ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';`
+```CREATE TABLE UserRecords(first_name String,last_name String,address String,country String,city String,state String,post String,phone1 String,phone2 String,email String,web String)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';```
 `LOAD DATA LOCAL INPATH '/home/cloudera/shalini/Datasets/UserRecords.txt' OVERWRITE INTO TABLE UserRecords;` \
 It creates a file UserRecords.txt in `/user/hive/warehouse/userrecords folder` (This is hive warehouse folder in cloudera VM)
 
@@ -198,8 +198,8 @@ PARTITIONED BY (datestamp STRING) CLUSTERED BY (userid) INTO 256 BUCKETS STORED 
   <name>hive.compactor.worker.threads</name>
   <value>2</value>
  </property>
-``` \
-Restart hive server as `sudo service hive-server2 restart` \
+```
+Restart hive server as `sudo service hive-server2 restart`
 
 ##### Table should be ORC and bucketed and have transactional=true for ACID transactions
 `CREATE TABLE students (name VARCHAR(64), age INT, gpa DECIMAL(3, 2))
