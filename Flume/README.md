@@ -6,7 +6,7 @@ or
 `apt-get install telenetd`
 
 `chkconfig telnet on` \
-Edit */etc/xinetd.d/telnet* and set *disable = yes* and restart telnet
+Edit **/etc/xinetd.d/telnet** and set **disable = yes** and restart telnet
 `/etc/init.d/xinetd restart`
 
 ### To start a Flume agent
@@ -57,7 +57,7 @@ sudo flume-ng agent
 --conf-file /home/cloudera/shalini/flume-ng-conf/telnet-flume-conf.properties 
 Dflume.root.logger=INFO,console
 ```
-4. In order to log the events in a file instead of console. Use --conf {conf-dir} . It is directory that contains *flume-env.sh* shell script  for logging in a file instead of console
+4. In order to log the events in a file instead of console. Use --conf {conf-dir} . It is directory that contains **flume-env.sh** shell script  for logging in a file instead of console
 ```
  sudo flume-ng agent 
 --name telnet-agent 
