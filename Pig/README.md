@@ -64,7 +64,7 @@ b)Add following line for storage using **HCatStorer** in your script.
 STORE emp_names INTO '$hive_table_name' USING org.apache.hive.hcatalog.pig.HCatStorer();
 --storing results in Hive managed table using HCatStorer
 ```
-c)Run the script passing hive_table_name as **pig_empnames** \ 
+c) Run the script passing hive_table_name as **pig_empnames**
 `exec -param output=/user/shalini/pig/output/ -param hive_table_name=pig_empnames /home/cloudera/shalini/pig/scripts/myscript.pig;`
 
 d) view  the output using select query in Hive
